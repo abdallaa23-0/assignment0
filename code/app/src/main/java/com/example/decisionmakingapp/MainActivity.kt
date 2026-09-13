@@ -36,19 +36,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Surface(color = Color.Cyan){
-        Text(
-            text = "Name: Abdalla Ali",
-            modifier = modifier.padding(2.dp)
-        )
-        Text(
-            text = "CCID: abdalla5",
-            modifier = modifier.padding(33.dp)
-        )
-        Text(
-            text = "ID: 1848812",
-            modifier = modifier.padding(46.dp)
-        )
-    }
+
+    Text(
+        text = "Name: Abdalla Ali",
+        modifier = modifier.padding(2.dp)
+    )
+    Text(
+        text = "CCID: abdalla5",
+        modifier = modifier.padding(33.dp)
+    )
+    Text(
+        text = "ID: 1848812",
+        modifier = modifier.padding(46.dp)
+    )
+
 }
 
