@@ -4,13 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.decisionmakingapp.ui.theme.DecisionMakingAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,16 +36,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    DecisionMakingAppTheme {
-        Greeting("Android")
+    Surface(color = Color.Cyan){
+        Text(
+            text = "Name: Abdalla Ali",
+            modifier = modifier.padding(2.dp)
+        )
+        Text(
+            text = "CCID: abdalla5",
+            modifier = modifier.padding(33.dp)
+        )
+        Text(
+            text = "ID: 1848812",
+            modifier = modifier.padding(46.dp)
+        )
     }
 }
+
