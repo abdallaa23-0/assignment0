@@ -23,13 +23,21 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.decisionmakingapp.ui.theme.DecisionMakingAppTheme
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,25 +61,44 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun JapanTrip(modifier: Modifier = Modifier){
-    Text(
-        text = "Abdalla Ali\nCCID: abdalla5\nID: 1848812"
+    var decision by remember{mutableStateOf("")}
+    var clickerTracker by remember { mutableIntStateOf(0) }
+
+    Column(modifier = modifier.fillMaxSize().padding(50.dp)) {
+        Text(
+            text = "Abdalla Ali\nCCID: abdalla5\nID: 1848812"
 
 
-    )
-    Column(modifier = modifier.fillMaxSize()) {
+        )
+        Text(
+            text = "Should we go?: $decision",
+            fontSize = 30.sp,
+            modifier = Modifier.fillMaxWidth().padding(horizontal = 30.dp, vertical = 40.dp)
+
+        )
+        Text(text = "Clicks counted: $clickerTracker")
+
         Row(modifier = Modifier.fillMaxWidth()) {
 
-            Spacer(modifier = Modifier.height(150.dp).width(30.dp))
-            Button(onClick = {/*TODO*/ }) {
+            Spacer(modifier = Modifier.height(150.dp))
+            Button(onClick = {clickerTracker++
+                decision = if(Random.nextInt(100)<50) "Yes" else "No"}) {
                 Text("Yeah")
 
             }
-            Button(onClick = {/*TODO*/ }) {
+            Button(onClick = {clickerTracker++
+                decision = if(Random.nextInt(100)<25) "Yes" else "No"
+            }) {
+
                 Text("Maybe")
             }
-            Button(onClick = {/*TODO*/ }) {
+            Button(onClick = {clickerTracker++
+            decision = if(Random.nextInt(100)<10)"Yes" else "No"}) {
                 Text("Nah")
             }
+
+
         }
+
     }
 }
