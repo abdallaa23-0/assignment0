@@ -1,6 +1,9 @@
 package com.example.decisionmakingapp
 
+
+
 import android.os.Bundle
+import com.example.decisionmakingapp.R
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -62,10 +65,18 @@ fun JapanTrip(modifier: Modifier = Modifier){
 
     Column(
         modifier = modifier.padding(100.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+
+
     ){
         Button(onClick = {/*TODO*/ }) {
             Text(stringResource(R.string.yeah))
+            val horizontalAlignment = Alignment.CenterHorizontally
+        }
+        Button(onClick = {/*TODO*/ }) {
+            Text(stringResource(R.string.Maybe))
+        }
+        Button(onClick = {/*TODO*/ }) {
+            Text(stringResource(R.string.Nah))
         }
     }
 }
