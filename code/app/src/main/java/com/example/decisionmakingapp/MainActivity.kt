@@ -11,8 +11,10 @@ import androidx.benchmark.traceprocessor.Row
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -56,22 +58,20 @@ fun JapanTrip(modifier: Modifier = Modifier){
 
 
     )
-    Column(
-        modifier = modifier.padding(100.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+    Column(modifier = modifier.fillMaxSize()) {
+        Row(modifier = Modifier.fillMaxWidth()) {
 
-    ){
-        Spacer(modifier = Modifier.height(30.dp).width(30.dp))
-        Button(onClick = {/*TODO*/ }) {
-            Text("Yeah")
+            Spacer(modifier = Modifier.height(150.dp).width(30.dp))
+            Button(onClick = {/*TODO*/ }) {
+                Text("Yeah")
 
-        }
-        Button(onClick = {/*TODO*/ }) {
-            Text("Maybe")
-        }
-        Button(onClick = {/*TODO*/ }) {
-            Text("Nah")
+            }
+            Button(onClick = {/*TODO*/ }) {
+                Text("Maybe")
+            }
+            Button(onClick = {/*TODO*/ }) {
+                Text("Nah")
+            }
         }
     }
 }
