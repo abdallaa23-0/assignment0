@@ -7,10 +7,15 @@ import com.example.decisionmakingapp.R
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.benchmark.traceprocessor.Row
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -32,7 +37,7 @@ class MainActivity : ComponentActivity() {
             DecisionMakingAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Column(modifier = Modifier.padding(innerPadding)) {
-                        Greeting(name = "Abdalla")
+
                         JapanTrip()
                     }
                 }
@@ -42,41 +47,31 @@ class MainActivity : ComponentActivity() {
 }
 
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
 
-    Text(
-        text = stringResource(R.string.nameLabel),
-        modifier = modifier.padding(2.dp)
-    )
-    Text(
-        text = stringResource(R.string.ccidLabel),
-        modifier = modifier.padding(33.dp)
-    )
-    Text(
-        text = stringResource(R.string.idLabel),
-        modifier = modifier.padding(46.dp)
-    )
-
-}
 
 @Composable
 fun JapanTrip(modifier: Modifier = Modifier){
+    Text(
+        text = "Abdalla Ali\nCCID: abdalla5\nID: 1848812"
 
+
+    )
     Column(
         modifier = modifier.padding(100.dp),
-
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
 
     ){
+        Spacer(modifier = Modifier.height(30.dp).width(30.dp))
         Button(onClick = {/*TODO*/ }) {
-            Text(stringResource(R.string.yeah))
-            val horizontalAlignment = Alignment.CenterHorizontally
+            Text("Yeah")
+
         }
         Button(onClick = {/*TODO*/ }) {
-            Text(stringResource(R.string.Maybe))
+            Text("Maybe")
         }
         Button(onClick = {/*TODO*/ }) {
-            Text(stringResource(R.string.Nah))
+            Text("Nah")
         }
     }
 }

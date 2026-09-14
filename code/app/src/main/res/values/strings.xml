@@ -1,9 +1,4 @@
 <resources>
     <string name="app_name">DecisionMakingApp</string>
-    <string name="nameLabel">Name: Abdalla Ali</string>
-    <string name="ccidLabel">CCID: abdalla5</string>
-    <string name="idLabel">ID: 1848812</string>
-    <string name="yeah">Yeah</string>
-    <string name="Maybe">Maybe</string>
-    <string name="Nah">Nah</string>
+
 </resources>
